@@ -10,19 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170328225742) do
+ActiveRecord::Schema.define(version: 20170329180426) do
+
+  create_table "accesses", force: :cascade do |t|
+    t.integer  "channel_id"
+    t.integer  "group_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["channel_id"], name: "index_accesses_on_channel_id"
+    t.index ["group_id"], name: "index_accesses_on_group_id"
+  end
 
   create_table "channels", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "channels_groups", id: false, force: :cascade do |t|
-    t.integer "channel_id"
-    t.integer "group_id"
-    t.index ["channel_id"], name: "index_channels_groups_on_channel_id"
-    t.index ["group_id"], name: "index_channels_groups_on_group_id"
   end
 
   create_table "groups", force: :cascade do |t|

@@ -4,10 +4,5 @@ class CreateGroups < ActiveRecord::Migration[5.0]
       t.string :name
       t.timestamps
     end
-
-    create_table :channels_groups, id: false do |t|
-      t.belongs_to :channel, index: true
-      t.belongs_to :group, index: true
-    end
   end
 end

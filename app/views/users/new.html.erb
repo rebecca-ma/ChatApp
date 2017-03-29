@@ -1,5 +1,7 @@
 <h1>Create a New User</h1>
 
+<%= render 'shared/errors', container: @user %>
+
 <%= form_for @user do |f| %>
   <p>
     <%= f.label 'Name:' %>

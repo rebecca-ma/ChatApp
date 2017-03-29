@@ -21,7 +21,7 @@
     <% @channel.messages.each do |message| %>
       <tr><td>
         <p>
-          <%= message.created_at.to_s %> -- <%= message.user.name %>
+          <%= message.get_time %> -- <%= message.get_user_name %>
         </p>
         <p>
           <%= message.content %>

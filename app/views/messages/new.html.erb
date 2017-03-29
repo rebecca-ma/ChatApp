@@ -1,10 +1,12 @@
 <h1>New Message in <%= @channel.name %></h1>
 
+<%= render 'shared/errors', container: @message %>
+
 <%= form_for @message, url: new_message_path(@channel) do |f| %>
   <%= f.hidden_field :channel_id, value: @channel.id %>
   <p>
     <%= f.label 'User:' %>
-    <%= f.collection_select :user_id, User.all, :id, :name %>
+    <%= f.collection_select :user_id, @channel.users, :id, :name %>
   </p>
   <p>
     <%= f.label 'Content:' %>

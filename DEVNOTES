@@ -1,7 +1,7 @@
 TODO:
 Order Messages by timestamp within Channels
 Determine behavior when User is deleted but Message is not
-Make sure users can't post to channels their group can't access
+Add error messages
 
 Future:
 User authentication

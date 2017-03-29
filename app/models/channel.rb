@@ -1,6 +1,9 @@
 class Channel < ApplicationRecord
-  has_and_belongs_to_many :groups
-  has_many :messages, dependent: :destroy
+  has_many :messages, -> { order(created_at: :asc) }, dependent: :destroy
+
+  has_many :accesses
+  has_many :groups, through: :accesses
+  has_many :users, through: :groups
 
   validates :name, presence: true, uniqueness: true
 end

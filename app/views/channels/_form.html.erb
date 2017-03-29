@@ -1,3 +1,5 @@
+<%= render 'shared/errors', container: @channel %>
+
 <%= form_for @channel do |f| %>
   <p>
     <%= f.text_field :name %>
