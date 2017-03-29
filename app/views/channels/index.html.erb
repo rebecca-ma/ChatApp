@@ -1,0 +1,18 @@
+<h1>Channels Index</h1>
+
+<table>
+  <tr><%= link_to 'New Channel', new_channel_path %></tr>
+  <% @channels.each do |channel| %>
+    <tr>
+      <td>
+        <%= link_to channel.name, channel_path(channel) %>
+      </td>
+      <td>
+        <%= link_to 'Delete',
+            channel_path(channel),
+            method: :delete,
+            data: { confirm: 'Delete this Channel?' } %>
+      </td>
+    </tr>
+  <% end %>
+</table>

@@ -1,0 +1,21 @@
+<h1>Show <%= @channel.name %></h1>
+
+<p>
+  Name: <%= @channel.name %>
+</p>
+<!--<p>
+  Accessed by:
+  <table>
+    <%#@channel.groups.each do |group| %>
+      <tr>
+        <%#group.name %>
+      </tr>
+    <%#end %>
+  </table>
+</p>-->
+<p>
+  <%= link_to 'Edit Channel', edit_channel_path(@channel) %>
+</p>
+<p>
+  <%= link_to 'Channel Index', channels_path %>
+</p>

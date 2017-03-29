@@ -1,0 +1,7 @@
+<h1>Edit <%= @channel.name %></h1>
+
+<%= render 'form', submit_msg: 'Save Changes' %>
+
+<p>
+  <%= link_to 'Cancel', channel_path(@channel) %>
+</p>
