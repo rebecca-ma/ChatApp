@@ -32,8 +32,13 @@ ActiveRecord::Schema.define(version: 20170328225742) do
   end
 
   create_table "messages", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "channel_id"
+    t.text     "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["channel_id"], name: "index_messages_on_channel_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

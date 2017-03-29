@@ -8,9 +8,9 @@
   Has Access To:
   <table>
     <% @group.channels.each do |channel| %>
-      <tr>
+      <tr><td>
         <%= link_to channel.name, channel_path(channel) %>
-      </tr>
+      </td></tr>
     <% end %>
   </table>
 </p>
@@ -19,7 +19,9 @@
   Members:
   <table>
     <% @group.users.each do |user| %>
-      <tr><%= user.name %></tr>
+      <tr><td>
+        <%= user.name %>
+      </td></tr>
     <% end %>
   </table>
 </p>

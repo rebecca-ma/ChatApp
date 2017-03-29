@@ -2,8 +2,8 @@
 
 <table>
   <tr><%= link_to 'New User', new_user_path %></tr>
-  <tr>
-    <% @users.each do |user| %>
+  <% @users.each do |user| %>
+    <tr>
       <td>
         <%= user.name %>
       </td>
@@ -16,6 +16,6 @@
             method: :delete,
             data: { confirm: 'Delete this User?' } %>
       </td>
-    <% end %>
-  </tr>
+    <tr>
+  <% end %>
 </table>
