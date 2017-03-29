@@ -15,7 +15,7 @@ class GroupsController < ApplicationController
   def create
     @group = Group.new(group_params)
     if @group.save
-      redirect_to show_group_path(@group)
+      redirect_to group_path(@group)
     else
       render 'new'
     end
@@ -28,7 +28,7 @@ class GroupsController < ApplicationController
   def update
     @group = Group.find(params[:id])
     if @group.update(group_params)
-      redirect_to show_group_path(@group)
+      redirect_to group_path(@group)
     else
       render 'edit'
     end
@@ -42,6 +42,6 @@ class GroupsController < ApplicationController
 
   private
     def group_params
-      params.require(:group).permit(:name, :channel_ids)
+      params.require(:group).permit(:name, channel_ids: [])
     end
 end

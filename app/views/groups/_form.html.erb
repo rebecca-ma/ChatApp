@@ -1,0 +1,13 @@
+<%= form_for @group do |f| %>
+  <p>
+    <%= f.label 'Group Name:' %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label 'Has Access To:' %>
+    <%= f.collection_check_boxes :channel_ids, Channel.all, :id, :name %>
+  </p>
+  <p>
+    <%= f.submit submit_msg %>
+  </p>
+<% end %>

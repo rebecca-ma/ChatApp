@@ -18,7 +18,15 @@ ActiveRecord::Schema.define(version: 20170328225742) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "channels_groups", id: false, force: :cascade do |t|
+    t.integer "channel_id"
+    t.integer "group_id"
+    t.index ["channel_id"], name: "index_channels_groups_on_channel_id"
+    t.index ["group_id"], name: "index_channels_groups_on_group_id"
+  end
+
   create_table "groups", force: :cascade do |t|
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -29,8 +37,11 @@ ActiveRecord::Schema.define(version: 20170328225742) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.integer  "group_id"
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_users_on_group_id"
   end
 
 end

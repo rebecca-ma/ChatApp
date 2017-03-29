@@ -1,0 +1,32 @@
+<h1>Show <%= @group.name %></h1>
+
+<p>
+  Group Name: <%= @group.name %>
+</p>
+
+<p>
+  Has Access To:
+  <table>
+    <% @group.channels.each do |channel| %>
+      <tr>
+        <%= link_to channel.name, channel_path(channel) %>
+      </tr>
+    <% end %>
+  </table>
+</p>
+
+<p>
+  Members:
+  <table>
+    <% @group.users.each do |user| %>
+      <tr><%= user.name %></tr>
+    <% end %>
+  </table>
+</p>
+
+<p>
+  <%= link_to 'Edit Group', edit_group_path(@group) %>
+</p>
+<p>
+  <%= link_to 'Group Index', groups_path %>
+</p>

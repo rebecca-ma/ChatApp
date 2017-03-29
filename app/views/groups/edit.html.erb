@@ -1,0 +1,7 @@
+<h1>Edit <%= @group.name %></h1>
+
+<%= render 'form', submit_msg: 'Save Changes' %>
+
+<p>
+  <%= link_to 'Cancel', group_path(@group) %>
+</p>

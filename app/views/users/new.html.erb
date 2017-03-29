@@ -1,0 +1,19 @@
+<h1>Create a New User</h1>
+
+<%= form_for @user do |f| %>
+  <p>
+    <%= f.label 'Name:' %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label 'Group:' %>
+    <%= f.collection_radio_buttons :group_id, Group.all, :id, :name %>
+  </p>
+  <p>
+    <%= f.submit 'Create User' %>
+  </p>
+<% end %>
+
+<p>
+  <%= link_to 'Cancel', users_path %>
+</p>
